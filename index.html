@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundary Mart</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+            <div class="navbar">
+                <div class="logo">
+                    <h1>LaundaryMart</h1>
+                    <span class="tagline">Where Clean Meets Care.</span>
+
+                </div>
+                
+                <ul  class="navlink">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#service">Service</a></li>
+                        <li><a href="#aboutus"> About Us</a></li>
+                        <li><a href="#Contact">Contact</a></li>
+                </ul>
+            
+                <div class="login" onclick="openModal()">
+                    login
+                </div>
+            <!-- AUTH MODAL -->
+            <div class="modal" id="authModal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+
+                    <!-- LOGIN FORM -->
+                    <div id="loginForm">
+                    <h2>Welcome Back</h2>
+                    <p class="modal-tagline">Login to LaundryMart</p>
+
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+
+                    <button class="modal-btn">Login</button>
+
+                    <p class="switch">
+                        Don’t have an account?
+                        <span onclick="showSignup()">Sign Up</span>
+                    </p>
+                    </div>
+
+                    <!-- SIGNUP FORM -->
+                    <div id="signupForm" style="display:none;">
+                    <h2>Create Account</h2>
+                    <p class="modal-tagline">Join LaundryMart</p>
+
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+
+                    <button class="modal-btn">Sign Up</button>
+
+                    <p class="switch">
+                        Already have an account?
+                        <span onclick="showLogin()">Login</span>
+                    </p>
+                    </div>
+                </div>
+            </div>
+
+    </header>
+
+ 
+    <main>
+        <section>
+            <div class="hero" id="home">
+                <div class="left">
+                    <h1>Rivitalize Your <span>Clothes </span>With Expert</h1>
+                    <h2>Laundary Sevice !</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione neque et eos? Quam perspiciatis nobis sit quas, aliquam sed numquam magnam soluta atque incidunt dolorem quasi voluptate cumque distinctio quae ad accusamus necessitatibus qui natus. Excepturi enim hic voluptatem. Nisi provident debitis quasi quo numquam voluptate eius explicabo facere cupiditate.</p>
+                    <button>book a service today!</button>
+
+                </div>
+                <div class="right">
+                    <div class="hero-img">
+                        
+                    </div>
+            
+                </div>
+                
+            </div>
+        </section>
+        <section class="service-overview" id="aboutus">
+            <div class="overview">
+                    <h1>
+                    Our Acheievments
+                    </h1>
+                    <h2>
+                    15+
+                    <p>Laundary Services</p>
+                    </h2>
+                    <h2>
+                    1 M+
+                     <p>happy Constumer</p>
+                    </h2>
+                    <h2>
+                    5+ Yrs
+                    <p>Experience</p>
+                    </h2>
+                    </div>
+        </section>
+        <section class="book-section" id="service">
+            <div class="booking">
+                <div class="left-card services">
+                <h2>Our services</h2>
+                <p>Click to add services</p>
+                    <ul class="service-list"> 
+                        <li>
+                            <span>Dry Clean</span>
+                            <span class="price">2000</span>
+                            <button class="btn add" onclick="toggleItem(this,'Dry Clean',2000)">
+                            Add Item
+                            </button>
+                        </li>
+                        <li>
+                            <span>Wash & Fold</span>
+                            <span class="price">1000</span>
+                            <button class="btn add" onclick="toggleItem(this,'Wash & Fold',1000)">
+                            Add Item
+                            </button>
+                        </li>
+                        <li>
+                            <span>Ironing</span>
+                            <span class="price">300</span>
+                            <button class="btn add" onclick="toggleItem(this,'Ironing',300)">
+                            Add Item
+                            </button>
+                        </li>
+                        <li>
+                            <span>Stain Removal</span>
+                            <span class="price">500</span>
+                            <button class="btn add" onclick="toggleItem(this,'Stain Removal',500)">
+                            Add Item
+                            </button>
+                        </li>
+                        </ul>
+                        <small class="hint">Add items and book Now</small>
+
+                </div>
+                <div class="right-card summary">
+                            <h3>Added Items</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                    <th>S.No</th>
+                                    <th>Service</th>
+                                    <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cart-items"></tbody>
+                                </table>
+
+                                <div class="total">
+                                <span>Total Amount</span>
+                                <strong id="total">₹0</strong>
+                                </div>
+                        <h3>Book Now</h3>
+
+                        <input type="text" id="name" placeholder="Full Name" required>
+
+                        <div class="row">
+                        <input type="email" id="email" placeholder="Email ID" required>
+                        <input type="tel" id="phone" placeholder="Phone Number" required>
+                        </div>
+
+                        <button class="book-btn" onclick="sendEmail()">Book Now</button>
+
+                        <p id="success-msg" style="display:none; color:green; margin-top:1rem;">
+                        Thank you For Booking the Service. We will get back to you soon!
+                        </p>
+                </div>
+                  
+
+                </div>
+        </section>
+        <section class="Quality-section">
+            <div class="quality">
+                <div class="feature-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="">
+                    <h3>Premium Services</h3>
+                    <p>Best quality laundry services with expert care.</p>
+                </div>
+                <div class="feature-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1827/1827370.png" alt="">
+                    <h3>Quick Support</h3>
+                    <p>Prompt customer support to resolve issues.</p>
+                </div>
+                <div class="feature-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2983/2983788.png" alt="">
+                    <h3>Hassle Free Delivery</h3>
+                    <p>Convenient pickup and doorstep delivery.</p>
+                </div>
+                <div class="feature-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2331/2331970.png" alt="">
+                    <h3>Affordable Prices</h3>
+                    <p>Quality services at pocket-friendly prices.</p>
+                </div>
+    
+            </div>
+
+        </section>
+        <section class="newsletter">
+            <div class="subscribe">
+                <h2>
+                Subscribe to our <br>newsletter
+                </h2>
+
+                <form class="newsletter-form">
+                <input type="text" placeholder="Full name" required>
+                <input type="email" placeholder="Email" required>
+                <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+        </section>
+    </main>
+    <footer class="footer" id="Contact">
+        <div class="footer-container">
+            <div class="footer-col">
+            <h3>LaundaryMart</h3>
+            <h4 class="tagline2"><strong>Where Clean Meets Care</strong></h4>
+            <p>About us</p>
+            <p>Lorem ipsum dolor sit amet consectetur sed ad congue.</p>
+            </div>
+            <div class="footer-col">
+            <h4>Important Links</h4>
+            <ul>
+                <li><a href="#aboutus">About us</a></li>
+                <li><a href="#contact">Contact us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of use</a></li>
+                <li><a href="#">Refund Policy</a></li>
+            </ul>
+            </div>
+            <!-- Contact -->
+            <div class="footer-col">
+            <h4>Contact</h4>
+            <p>mail@gmail.com</p>
+            <p>+91 91234 56780</p>
+            </div>
+            <!-- Social -->
+            <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="socials">
+                <a href="#">🔵</a>
+                <a href="#">📸</a>
+                <a href="#">🐦</a>
+                <a href="#">▶️</a>
+            </div>
+            </div>
+
+        </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("H4eL54CWq25vromdm"); // replace
+  })();
+</script>
+<script src="Script.js"></script>
+</body>
+</html>
