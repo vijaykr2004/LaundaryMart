@@ -5,7 +5,6 @@ LaundryMart is a responsive frontend web application that allows users to browse
 ---
 
 ## 🚀 Live Demo
-task4-tutedude.netlify.app
 
 ---
 
@@ -64,6 +63,7 @@ LaundryMart/
 ├── style.css
 ├── Script.js
 └── README.md
+
 
 
 
